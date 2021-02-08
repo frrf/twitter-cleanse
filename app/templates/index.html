@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+
+  <title>Twitter Cleanse</title>
+</head>
+<body onload="test();">
+  <main>
+    <form action="" method="POST">
+      <!-- User Input -->
+      <label for="twitter_handle">
+        Twitter Handle
+        @<input type="text" name="target_handle_text" id="target_handle" placeholder="enter twitter handle" required>
+      </label>
+      <br>
+      <!-- User Input -->
+      <label for="term_to_search">
+        Input term to search:   
+        <input type="text" name="term_to_search_text" id="term_to_search" placeholder="term to search" required>
+      </label>
+      <button value="submit">Submit</button>
+    </form>
+  </main>
+  
+  <section>
+    <!-- User Output -->
+    <div id="container" style="display:none">{{target_handle_tweet_id}}</div>
+    <div id="print_tweet_area">
+      <!-- Hidden for use by JS query selector -->
+      {%if tweetIDList != None%} 
+        {%for item in tweetIDList%} 
+          <span style="display:none">{{item}}</span> 
+        {%endfor%} 
+      {%else%} 
+        <h1>@{{target_handle}} has no links to searched word: {{termToSearch}}</h1> 
+      {%endif%} 
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- Embedded Tweet Template -->
+  <!-- <blockquote class="twitter-tweet"><a href="https://twitter.com/user/status/1358128747526905861"></a></blockquote>  -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="/static/scripts/app.js"></script>
+</body>
+</html>
