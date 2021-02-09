@@ -5,6 +5,8 @@
   --dark-gray: #657786;
   --black: #14171A;
   --blue: #1DA1F2;
+  --dark-blue: #1683c7;
+  --dark-dark-blue: #10689e;
 
 }
 
@@ -81,4 +83,17 @@ button {
   padding: 15px;
   width: fit-content;
   margin-left: auto;
+  transition: all 350ms;
+
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue);
+  transition: all 350ms;
+}
+
+button:active {
+  background-color: var(--dark-dark-blue);
+  transition: all 350ms;
 }
