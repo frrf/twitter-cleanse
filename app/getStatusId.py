@@ -14,7 +14,7 @@ def test(target_handle,termToSearch):
   tweetIDList = []
   
   for status in tweepy.Cursor(api.user_timeline, id=target_handle).items():
-    if (termToSearch in status.text.lower()):
+    if (termToSearch.lower() in status.text.lower()):
         tweetIDList.append(repr(status.id))
 
   if len(tweetIDList) < 1:

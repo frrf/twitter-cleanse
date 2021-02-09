@@ -1,4 +1,4 @@
-function test () {
+function generateTweets () {
   const multipleIDS = document.getElementsByTagName('span');
   const tweetContainer = document.getElementById('print_tweet_area');
   const tweetID = document.getElementById('container').innerText;
