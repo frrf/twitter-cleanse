@@ -16,7 +16,7 @@ def my_form_post():
     if (type(tweetIDList) is not list):
       return render_template("index.html", tweetIDList=tweetIDList, target_handle=target_handle, termToSearch=termToSearch)
     else:
-      return render_template("index.html", target_handle_tweet_id=tweetIDList[0], tweetIDList=tweetIDList)
+      return render_template("index.html", target_handle_tweet_id=tweetIDList[0], tweetIDList=tweetIDList ,target_handle=target_handle, termToSearch=termToSearch)
     
 if __name__ == "__main__":
   app.run(debug=True)

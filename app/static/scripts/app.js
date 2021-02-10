@@ -6,6 +6,7 @@ function generateTweets () {
   for(let i = 0; i < multipleIDS.length; i++) {
     twttr.widgets.createTweet(multipleIDS[i].textContent,tweetContainer);
   }
+  
 }
 
 let btn = document.getElementById('btn');
