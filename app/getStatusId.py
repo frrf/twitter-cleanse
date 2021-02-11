@@ -15,9 +15,11 @@ def test(target_handle,termToSearch):
   
   for status in tweepy.Cursor(api.user_timeline, id=target_handle).items():
     if (termToSearch.lower() in status.text.lower()):
+        # stores the tweet IDs of those that match the termToSearch string
         tweetIDList.append(repr(status.id))
 
   if len(tweetIDList) < 1:
+    # if the search returns 0 tweet IDs the None is returned
     return None
   else:
     return tweetIDList
