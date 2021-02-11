@@ -13,7 +13,7 @@ def my_form_post():
     target_handle = request.form['target_handle_text']
     termToSearch = request.form['term_to_search_text']
     tweetIDList = test(target_handle, termToSearch)
-    if (type(tweetIDList) is not list):
+    if (type(tweetIDList) is not list): # if the test function returns a non-list variable (meaning it failed)
       return render_template("index.html", tweetIDList=tweetIDList, target_handle=target_handle, termToSearch=termToSearch)
     else:
       return render_template("index.html", target_handle_tweet_id=tweetIDList[0], tweetIDList=tweetIDList ,target_handle=target_handle, termToSearch=termToSearch)
